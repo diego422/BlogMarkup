@@ -1,34 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlogMarkup</title>
-    <link rel="stylesheet" href="global.css"/> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlogMarkup — Inicio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="global.css" />
+  <meta name="description" content="BlogMarkup: blog estático con HTML y CSS, diseño responsive y modo oscuro.">
 </head>
-
 <body>
-    <header>
-        <h1>Bloc Personal</h1>
-        <p class="author">Por Diego Starlin Herrera López | 2025</p>
-    </header>
-    <main>
-        <article>
-            <h2>¿Por qué aprender HTML y CSS?</h2>
-            <p>HTML y CSS son la base de toda página web. Aprenderlos te da el control total sobre el contenido y el
-                diseño de tus proyectos.</p>
-            <h3>¿Qué es HTML?</h3>
-            <p>HTML (HyperText Markup Language) estructura el contenido de una web: títulos, párrafos, imágenes,
-                enlaces, etc.</p>
-            <h3>¿Y CSS?</h3>
-            <p>CSS (Cascading Style Sheets) permite aplicar estilos visuales: colores, márgenes, fuentes, etc.</p>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Principal">
+        <a href="index.html" class="logo">BlogMarkup</a>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu">☰</button>
+        <ul id="menu" class="menu">
+          <li><a aria-current="page" href="index.html">Inicio</a></li>
+          <li><a href="articulo1.html">Artículo</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="banner" role="img" aria-label="Banner decorativo con degradado">
+        <h1>Construye un blog elegante sin JavaScript</h1>
+        <p>HTML + CSS puros, tipografía cuidada, transiciones suaves y modo oscuro automático.</p>
+        <a class="btn" href="articulo1.html"><i class="fa-solid fa-book-open"></i> Leer el artículo</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido" class="container">
+    <section aria-labelledby="ultimos-articulos">
+      <h2 id="ultimos-articulos">Últimos artículos</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="articulo1.html">¿Por qué aprender HTML y CSS?</a></h3>
+          <p class="meta">Por Diego López — 6 de agosto de 2025</p>
+          <p class="excerpt">La base de toda la web: estructura, estilos y control total del contenido.</p>
+          <a class="link" href="articulo1.html">Seguir leyendo <i class="fa-solid fa-arrow-right"></i></a>
         </article>
-    </main>
 
-    <footer>
-        <p>&copy; 2025 Diego Starlin Herrera López - Todos los derechos reservados.</p>
-    </footer>
+        <article class="card placeholder" aria-hidden="true">
+          <h3>Próximamente</h3>
+          <p class="meta">Nueva entrada en camino</p>
+          <p class="excerpt">Duplica esta tarjeta y crea un nuevo archivo para añadir artículos.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>&copy; 2025 Diego López — BlogMarkup.</p>
+      <p class="social">
+        <a href="#" aria-label="X/Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="contacto.html" class="contacto-link"><i class="fa-solid fa-envelope"></i> Contacto</a>
+      </p>
+    </div>
+  </footer>
 </body>
-
 </html>
