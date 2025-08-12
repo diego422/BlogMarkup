@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlogMarkup — ¿Por qué aprender HTML y CSS?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="Artículo: Por qué aprender HTML y CSS.">
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="site-header compact">
+    <div class="container">
+      <nav class="nav" aria-label="Principal">
+        <a href="index.html" class="logo">BlogMarkup</a>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu">☰</button>
+        <ul id="menu" class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a aria-current="page" href="articulo1.html">Artículo</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="container article">
+    <article>
+      <header class="post-header">
+        <h1>¿Por qué aprender HTML y CSS?</h1>
+        <p class="meta">Por Diego López · 6 de agosto de 2025 · <span class="reading-time"><i class="fa-regular fa-clock"></i> 4 min</span></p>
+        <figure class="featured">
+          <div class="featured-img" role="img" aria-label="Figura decorativa estilo tarjeta"></div>
+          <figcaption>Imagen destacada sin recursos externos: generada con CSS.</figcaption>
+        </figure>
+      </header>
+
+      <section>
+        <h2>La base de toda la web</h2>
+        <p>HTML y CSS son la base de toda página web. Aprenderlos te da el control total sobre el contenido y el diseño de tus proyectos.</p>
+        <h3>¿Qué es HTML?</h3>
+        <p><strong>HTML</strong> (HyperText Markup Language) estructura el contenido de una web: títulos, párrafos, imágenes, enlaces, etc.</p>
+        <h3>¿Y CSS?</h3>
+        <p><strong>CSS</strong> (Cascading Style Sheets) permite aplicar estilos visuales: colores, márgenes, fuentes, etc.</p>
+      </section>
+
+      <section>
+        <h2>Buenas prácticas de maquetación</h2>
+        <ul>
+          <li>Usa etiquetas semánticas para mejorar accesibilidad y SEO.</li>
+          <li>Mantén una jerarquía tipográfica clara.</li>
+          <li>Cuida el espaciado y la legibilidad en móviles.</li>
+        </ul>
+      </section>
+
+      <footer class="post-footer">
+        <a class="btn secondary" href="index.html"><i class="fa-solid fa-arrow-left"></i> Volver al inicio</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>&copy; 2025 Diego López — BlogMarkup.</p>
+      <p class="social">
+        <a href="#" aria-label="X/Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="contacto.html" class="contacto-link"><i class="fa-solid fa-envelope"></i> Contacto</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
