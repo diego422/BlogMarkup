@@ -1,4 +1,4 @@
-/* ====== Variables y reset ====== */
+/* ===== Variables base y reset ===== */
 :root {
   --bg: #f6f7f9;
   --text: #1f2937;
@@ -23,6 +23,27 @@
   }
 }
 
+/* ===== Modo de alto contraste si el usuario lo prefiere ===== */
+@media (prefers-contrast: more) {
+  :root {
+    --border: #9ca3af;
+    --shadow: none;
+  }
+}
+
+/* ===== Toggle manual de tema (sin JS) =====
+   Cuando #theme-toggle está checked, sobreescribe variables */
+:root:has(#theme-toggle:checked) {
+  --bg: #0b0d12;
+  --text: #e6e6e6;
+  --muted: #9aa4b2;
+  --primary: #7aa2ff;
+  --primary-700: #98b3ff;
+  --card: #121622;
+  --border: #1f2432;
+  --shadow: 0 10px 25px rgba(0, 0, 0, .35);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -41,10 +62,22 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* ====== Utilidades ====== */
+/* ===== Utilidades ===== */
 .container {
   width: min(1100px, 92%);
   margin-inline: auto;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  inset: 0 auto auto 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 .skip {
@@ -62,7 +95,7 @@ body {
   box-shadow: var(--shadow);
 }
 
-/* ====== Header / Nav ====== */
+/* ===== Header / Nav + Menú móvil con checkbox hack ===== */
 .site-header {
   position: sticky;
   top: 0;
@@ -98,6 +131,35 @@ body {
   font-family: Merriweather, serif;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .35rem .5rem;
+  border: 1px solid var(--border);
+  border-radius: .6rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.theme-switch i {
+  font-size: 1rem;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  padding: .35rem .5rem;
+  border: 1px solid var(--border);
+  border-radius: .6rem;
+}
+
 .menu {
   list-style: none;
   display: flex;
@@ -123,15 +185,12 @@ body {
   transform: translateY(-1px);
 }
 
-.menu-toggle {
-  display: none;
-  background: none;
-  border: 1px solid var(--border);
-  padding: .4rem .6rem;
-  border-radius: .5rem;
+/* Mostrar menú cuando el checkbox está activo (móvil) */
+#nav-toggle:checked~.site-header .menu {
+  display: flex;
 }
 
-/* ====== Banner ====== */
+/* ===== Banner ===== */
 .banner {
   margin: 1rem 0 2rem;
   padding: 3rem 1.25rem;
@@ -184,7 +243,7 @@ body {
   background: rgba(43, 89, 255, .08);
 }
 
-/* ====== Grid de tarjetas ====== */
+/* ===== Grid / Cards ===== */
 .grid {
   display: grid;
   gap: 1.2rem;
@@ -213,7 +272,7 @@ body {
 
 .card .meta {
   color: var(--muted);
-  font-size: .9rem;
+  font-size: .95rem;
   margin: 0 0 .4rem;
 }
 
@@ -233,7 +292,7 @@ body {
   border-style: dashed;
 }
 
-/* ====== Artículo ====== */
+/* ===== Artículo ===== */
 .article {
   padding-block: 1.2rem 2.2rem;
 }
@@ -268,38 +327,48 @@ body {
 
 .featured figcaption {
   padding: .6rem .9rem;
-  font-size: .9rem;
+  font-size: .95rem;
   color: var(--muted);
   border-top: 1px solid var(--border);
 }
 
-.article h2 {
+/* Cita destacada */
+blockquote {
+  margin: 1rem 0;
+  padding: .9rem 1rem;
+  border-left: 4px solid var(--primary);
+  background: color-mix(in srgb, var(--primary) 6%, transparent);
+  border-radius: .4rem;
+  font-style: italic;
+  color: var(--text);
+}
+
+/* Relacionados */
+.related {
   margin-top: 1.4rem;
-  margin-bottom: .4rem;
+  padding-top: .8rem;
+  border-top: 1px dashed var(--border);
 }
 
-.article h3 {
-  margin-top: 1rem;
-  margin-bottom: .25rem;
+.related-list {
+  padding-left: 1rem;
 }
 
-.article p {
-  margin: .5rem 0 .7rem;
+.related-list li {
+  margin: .35rem 0;
 }
 
-.article ul {
-  margin: .5rem 0 .9rem 1rem;
+.related a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 600;
 }
 
-.article li {
-  margin: .3rem 0;
+.related a:hover {
+  text-decoration: underline;
 }
 
-.post-footer {
-  margin-top: 1.4rem;
-}
-
-/* ====== Formulario ====== */
+/* ===== Formulario ===== */
 .form {
   margin-top: .8rem;
   background: var(--card);
@@ -341,7 +410,7 @@ button.btn {
   cursor: pointer;
 }
 
-/* ====== Footer ====== */
+/* ===== Footer ===== */
 .site-footer {
   border-top: 1px solid var(--border);
   margin-top: 2rem;
@@ -365,7 +434,7 @@ button.btn {
   color: var(--primary);
 }
 
-/* ====== Animaciones ====== */
+/* ===== Animaciones ===== */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -384,13 +453,23 @@ button.btn {
   animation: fadeIn .5s ease both;
 }
 
-/* ====== Responsive ====== */
+/* ===== Responsive ===== */
 @media (max-width: 860px) {
   .menu {
     display: none;
+    position: absolute;
+    right: 4%;
+    top: 64px;
+    flex-direction: column;
+    gap: .4rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: .6rem;
+    padding: .6rem;
+    box-shadow: var(--shadow);
   }
 
-  .menu-toggle {
+  .hamburger {
     display: inline-block;
   }
 }

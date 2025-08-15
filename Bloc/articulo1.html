@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="auto">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,18 +9,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css" />
-  <meta name="description" content="Artículo: Por qué aprender HTML y CSS.">
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <input type="checkbox" id="nav-toggle" class="visually-hidden" aria-hidden="true">
+  <input type="checkbox" id="theme-toggle" class="visually-hidden" aria-hidden="true">
+
   <header class="site-header compact">
     <div class="container">
       <nav class="nav" aria-label="Principal">
         <a href="index.html" class="logo">BlogMarkup</a>
-        <button class="menu-toggle" aria-expanded="false" aria-controls="menu">☰</button>
+        <div class="nav-actions">
+          <label class="theme-switch" for="theme-toggle" title="Cambiar tema" aria-label="Cambiar tema">
+            <i class="fa-regular fa-sun"></i><i class="fa-regular fa-moon"></i>
+          </label>
+          <label class="hamburger" for="nav-toggle" aria-label="Abrir menú">☰</label>
+        </div>
         <ul id="menu" class="menu">
           <li><a href="index.html">Inicio</a></li>
           <li><a aria-current="page" href="articulo1.html">Artículo</a></li>
+          <li><a href="sobre.html">Sobre mí</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
@@ -40,6 +49,9 @@
 
       <section>
         <h2>La base de toda la web</h2>
+        <blockquote>
+          Aprender HTML y CSS es como construir la base de una casa: si la haces sólida, todo lo demás se sostiene mejor.
+        </blockquote>
         <p>HTML y CSS son la base de toda página web. Aprenderlos te da el control total sobre el contenido y el diseño de tus proyectos.</p>
         <h3>¿Qué es HTML?</h3>
         <p><strong>HTML</strong> (HyperText Markup Language) estructura el contenido de una web: títulos, párrafos, imágenes, enlaces, etc.</p>
@@ -56,6 +68,15 @@
         </ul>
       </section>
 
+      <!-- Artículos relacionados -->
+      <aside class="related" aria-labelledby="rel-title">
+        <h2 id="rel-title">Artículos relacionados</h2>
+        <ul class="related-list">
+          <li><a href="sobre.html">Sobre mí: quién soy y qué encontrarás en este blog</a></li>
+          <li><a href="contacto.html">Contacto: sugerencias y colaboraciones</a></li>
+        </ul>
+      </aside>
+
       <footer class="post-footer">
         <a class="btn secondary" href="index.html"><i class="fa-solid fa-arrow-left"></i> Volver al inicio</a>
       </footer>
@@ -66,8 +87,12 @@
     <div class="container footer-grid">
       <p>&copy; 2025 Diego López — BlogMarkup.</p>
       <p class="social">
-        <a href="#" aria-label="X/Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/diego-herrera-l%C3%B3pez" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/diego422" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
         <a href="contacto.html" class="contacto-link"><i class="fa-solid fa-envelope"></i> Contacto</a>
       </p>
     </div>
