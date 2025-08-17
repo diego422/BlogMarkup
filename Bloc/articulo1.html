@@ -4,28 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BlogMarkup — ¿Por qué aprender HTML y CSS?</title>
+
+  <!-- Tipografías e iconos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/style.css" />
+
+  <link rel="stylesheet" href="global.css" />
+  <meta name="description" content="Artículo: Por qué aprender HTML y CSS con buenas prácticas y diseño responsive.">
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
 
-  <input type="checkbox" id="nav-toggle" class="visually-hidden" aria-hidden="true">
-  <input type="checkbox" id="theme-toggle" class="visually-hidden" aria-hidden="true">
+  <!-- Toggle de menú -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú">
 
   <header class="site-header compact">
     <div class="container">
       <nav class="nav" aria-label="Principal">
         <a href="index.html" class="logo">BlogMarkup</a>
-        <div class="nav-actions">
-          <label class="theme-switch" for="theme-toggle" title="Cambiar tema" aria-label="Cambiar tema">
-            <i class="fa-regular fa-sun"></i><i class="fa-regular fa-moon"></i>
-          </label>
-          <label class="hamburger" for="nav-toggle" aria-label="Abrir menú">☰</label>
-        </div>
+
+        <label class="hamburger" for="nav-toggle" aria-label="Abrir menú" aria-controls="menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </label>
+
         <ul id="menu" class="menu">
           <li><a href="index.html">Inicio</a></li>
           <li><a aria-current="page" href="articulo1.html">Artículo</a></li>
@@ -68,7 +71,6 @@
         </ul>
       </section>
 
-      <!-- Artículos relacionados -->
       <aside class="related" aria-labelledby="rel-title">
         <h2 id="rel-title">Artículos relacionados</h2>
         <ul class="related-list">
@@ -87,12 +89,8 @@
     <div class="container footer-grid">
       <p>&copy; 2025 Diego López — BlogMarkup.</p>
       <p class="social">
-        <a href="https://www.linkedin.com/in/diego-herrera-l%C3%B3pez" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/diego422" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
+        <a href="https://www.linkedin.com/in/diego-herrera-l%C3%B3pez" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/diego422" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
         <a href="contacto.html" class="contacto-link"><i class="fa-solid fa-envelope"></i> Contacto</a>
       </p>
     </div>

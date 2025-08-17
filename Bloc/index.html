@@ -4,10 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BlogMarkup — Inicio</title>
+
+  <!-- Tipografías e iconos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <link rel="stylesheet" href="global.css" />
   <meta name="description" content="BlogMarkup: blog estático con HTML y CSS, diseño responsive y modo oscuro.">
 </head>
@@ -18,7 +21,13 @@
     <div class="container">
       <nav class="nav" aria-label="Principal">
         <a href="index.html" class="logo">BlogMarkup</a>
-        <button class="menu-toggle" aria-expanded="false" aria-controls="menu">☰</button>
+
+        <!-- Hamburguesa accesible -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú">
+        <label for="nav-toggle" class="hamburger" aria-label="Abrir menú" aria-controls="menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </label>
+
         <ul id="menu" class="menu">
           <li><a aria-current="page" href="index.html">Inicio</a></li>
           <li><a href="articulo1.html">Artículo</a></li>
@@ -59,12 +68,8 @@
     <div class="container footer-grid">
       <p>&copy; 2025 Diego López — BlogMarkup.</p>
       <p class="social">
-        <a href="https://www.linkedin.com/in/diego-herrera-l%C3%B3pez" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/diego422" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
+        <a href="https://www.linkedin.com/in/diego-herrera-l%C3%B3pez" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/diego422" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
         <a href="contacto.html" class="contacto-link"><i class="fa-solid fa-envelope"></i> Contacto</a>
       </p>
     </div>

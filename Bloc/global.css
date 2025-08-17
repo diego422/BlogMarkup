@@ -480,3 +480,76 @@ button.btn {
     align-items: flex-start;
   }
 }
+
+/* === Menú hamburguesa accesible (checkbox hack) === */
+
+/* Ocultar el checkbox visualmente pero dejarlo accesible */
+.nav-toggle {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+/* Icono hamburguesa */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  padding: .35rem .5rem;
+  border: 1px solid var(--border);
+  border-radius: .6rem;
+  background: var(--card);
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  margin: 4px 0;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+/* Estado activo del menú (animación opcional de la X) */
+.nav-toggle:checked+.hamburger span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle:checked+.hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle:checked+.hamburger span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Comportamiento responsive del menú */
+@media (max-width: 860px) {
+  .hamburger {
+    display: inline-block;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    right: 4%;
+    top: 64px;
+    flex-direction: column;
+    gap: .4rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: .6rem;
+    padding: .6rem;
+    box-shadow: var(--shadow);
+    z-index: 60;
+  }
+
+  /* Mostrar el menú cuando el checkbox está activo */
+  .nav-toggle:checked~.menu {
+    display: flex;
+  }
+}
