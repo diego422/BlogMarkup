@@ -3,13 +3,6 @@
 BlogMarkup es un proyecto web **estático** creado únicamente con **HTML y CSS**.  
 Presenta una entrada de blog cuidadosamente estructurada, con énfasis en:
 
-- Jerarquía tipográfica  
-- Espaciado equilibrado  
-- Diseño responsive adaptable a móviles  
-- Accesibilidad (navegación por teclado, etiquetas semánticas, skip link)  
-
-Su propósito es demostrar cómo se puede construir una experiencia de lectura **limpia y profesional** sin necesidad de **JavaScript ni frameworks**.
-
 ---
 
 ## 🚀 Funcionalidades principales
@@ -34,6 +27,11 @@ Su propósito es demostrar cómo se puede construir una experiencia de lectura *
 ---
 
 ## ⚡ Cómo ejecutar el proyecto
+
+- Clonar el proyecto.
+- Haz doble clic en el archivo index.html → se abrirá en tu navegador.
+- O Instala la extensión Live Server.
+- Haz clic derecho en index.html → Open with Live Server.
 
 ---
 
